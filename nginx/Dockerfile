@@ -6,17 +6,33 @@ RUN cd /tmp
 
 # update source  
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe"> /etc/apt/sources.list  
-RUN apt-get update  
 
-RUN apt-get -y install curl 
+RUN apt-get update && apt-get install -y \
+    aufs-tools \
+    automake \
+    btrfs-tools \
+    build-essential \
+    curl \
+    dpkg-sig \
+    git \
+    iptables \
+    libapparmor-dev \
+    libcap-dev \
+    libsqlite3-dev \
+    lxc=1.0* \
+    mercurial \
+    parallel \
+    reprepro \
+    s3cmd=1.1.0*
+	
+	
 
-RUN apt-get -y install make 
+RUN mkdir -p luajit \
+    && curl -SL http://luajit.org/download/LuaJIT-2.0.4.tar.gz \
+    | tar -xJC luajit \
+    && make -C luajit all \
+	&& make install
 
-RUN curl -SL http://luajit.org/download/LuaJIT-2.0.4.tar.gz | tar -xz 
-RUN cd  LuaJIT-2.0.4
-RUN make && make install
-
-RUN cd /tmp
 
 RUN curl -SL https://www.openssl.org/source/old/1.0.2/openssl-1.0.2g.tar.gz | tar -xz 
 RUN curl -SL http://exim.mirror.fr/pcre/pcre-8.37.tar.gz | tar -xz 
