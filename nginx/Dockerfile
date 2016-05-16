@@ -1,6 +1,50 @@
 FROM ubuntu:14.04.4
 MAINTAINER liulei "liulei@ct108.com" 
 
+# runtime dependencies
+# (packages are listed alphabetically to ease maintenence)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+		fontconfig-config \
+		fonts-dejavu-core \
+		geoip-database \
+		init-system-helpers \
+		libarchive-extract-perl \
+		libexpat1 \
+		libfontconfig1 \
+		libfreetype6 \
+		libgcrypt11 \
+		libgd3 \
+		libgdbm3 \
+		libgeoip1 \
+		libgpg-error0 \
+		libjbig0 \
+		libjpeg8 \
+		liblog-message-perl \
+		liblog-message-simple-perl \
+		libmodule-pluggable-perl \
+		libpng12-0 \
+		libpod-latex-perl \
+		libssl1.0.0 \
+		libterm-ui-perl \
+		libtext-soundex-perl \
+		libtiff5 \
+		libvpx1 \
+		libx11-6 \
+		libx11-data \
+		libxau6 \
+		libxcb1 \
+		libxdmcp6 \
+		libxml2 \
+		libxpm4 \
+		libxslt1.1 \
+		perl \
+		perl-modules \
+		rename \
+		sgml-base \
+		ucf \
+		xml-core \
+	&& rm -rf /var/lib/apt/lists/*
+
 RUN cd /tmp 
 RUN curl -L http://luajit.org/download/LuaJIT-2.0.4.tar.gz | tar -xz 
 RUN make && make install
