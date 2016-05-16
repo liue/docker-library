@@ -24,6 +24,9 @@ RUN  cd LuaJIT-2.0.4 && make && make install
 RUN export LUAJIT_LIB=/usr/local/lib
 RUN export LUAJIT_INC=/usr/local/include/luajit-2.0
 
+ADD /usr/local/lib/libluajit-5.1.so /usr/local/lib64
+ADD /usr/local/lib/libluajit-5.1.so.2 /usr/local/lib64
+
 
 RUN curl -SL https://www.openssl.org/source/old/1.0.2/openssl-1.0.2g.tar.gz | tar -xz 
 RUN curl -SL http://exim.mirror.fr/pcre/pcre-8.37.tar.gz | tar -xz 
@@ -33,7 +36,7 @@ RUN git clone https://github.com/openresty/echo-nginx-module.git
 RUN git clone https://github.com/simpl/ngx_devel_kit.git
 RUN git clone https://github.com/openresty/redis2-nginx-module.git
 RUN git clone https://github.com/openresty/srcache-nginx-module.git
-RUN git clone https://github.com/openresty/lua-nginx-module
+RUN git clone https://github.com/openresty/lua-nginx-module.git
 RUN git clone https://github.com/openresty/set-misc-nginx-module.git
 
 RUN curl -SL http://nginx.org/download/nginx-1.8.1.tar.gz | tar -xz 
@@ -56,5 +59,5 @@ RUN cd nginx-1.8.1 && \
 
 WORKDIR /usr/local/nginx/logs
 
-EXPOSE 80
+EXPOSE 443
 CMD ["/usr/local/nginx/sbin/nginx"]
