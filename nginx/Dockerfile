@@ -4,6 +4,10 @@ MAINTAINER liulei "liulei@ct108.com"
 
 RUN cd /tmp 
 
+# update source  
+RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe"> /etc/apt/sources.list  
+RUN apt-get update  
+
 RUN apt-get -y install curl 
 
 RUN curl -SL http://luajit.org/download/LuaJIT-2.0.4.tar.gz | tar -xz 
