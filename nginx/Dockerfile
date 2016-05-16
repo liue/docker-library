@@ -11,7 +11,10 @@ RUN apt-get update
 RUN apt-get -y install curl 
 
 RUN curl -SL http://luajit.org/download/LuaJIT-2.0.4.tar.gz | tar -xz 
+RUN cd  LuaJIT-2.0.4
 RUN make && make install
+
+RUN cd /tmp
 
 RUN curl -SL https://www.openssl.org/source/old/1.0.2/openssl-1.0.2g.tar.gz | tar -xz 
 RUN curl -SL http://exim.mirror.fr/pcre/pcre-8.37.tar.gz | tar -xz 
