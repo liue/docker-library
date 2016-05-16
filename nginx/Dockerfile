@@ -3,6 +3,9 @@ MAINTAINER liulei "liulei@ct108.com"
 
 
 RUN cd /tmp 
+
+RUN apt-get -y install curl 
+
 RUN curl -SL http://luajit.org/download/LuaJIT-2.0.4.tar.gz | tar -xz 
 RUN make && make install
 
