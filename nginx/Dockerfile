@@ -21,11 +21,8 @@ RUN apt-get -qqy install libssl-dev
 RUN curl -SL http://luajit.org/download/LuaJIT-2.0.4.tar.gz | tar -xz
 RUN  cd LuaJIT-2.0.4 && make && make install
 
-RUN export LUAJIT_LIB=/usr/local/lib
-RUN export LUAJIT_INC=/usr/local/include/luajit-2.0
-
-ADD /usr/local/lib/libluajit-5.1.so /usr/local/lib64
-ADD /usr/local/lib/libluajit-5.1.so.2 /usr/local/lib64
+RUN echo "/usr/local/lib" > /etc/ld.so.conf.d/usr_local_lib.conf
+RUN /sbin/ldconfig
 
 
 RUN curl -SL https://www.openssl.org/source/old/1.0.2/openssl-1.0.2g.tar.gz | tar -xz 
