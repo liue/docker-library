@@ -10,6 +10,8 @@ RUN apt-get update
 
 RUN apt-get -y install curl 
 
+RUN apt-get -y install make 
+
 RUN curl -SL http://luajit.org/download/LuaJIT-2.0.4.tar.gz | tar -xz 
 RUN cd  LuaJIT-2.0.4
 RUN make && make install
