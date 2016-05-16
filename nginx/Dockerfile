@@ -21,6 +21,9 @@ RUN apt-get -qqy install libssl-dev
 RUN curl -SL http://luajit.org/download/LuaJIT-2.0.4.tar.gz | tar -xz
 RUN  cd LuaJIT-2.0.4 && make && make install
 
+RUN export LUAJIT_LIB=/usr/local/lib
+RUN export LUAJIT_INC=/usr/local/include/luajit-2.0
+
 
 RUN curl -SL https://www.openssl.org/source/old/1.0.2/openssl-1.0.2g.tar.gz | tar -xz 
 RUN curl -SL http://exim.mirror.fr/pcre/pcre-8.37.tar.gz | tar -xz 
