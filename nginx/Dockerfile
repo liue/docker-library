@@ -36,8 +36,20 @@ RUN git clone https://github.com/openresty/set-misc-nginx-module.git
 RUN curl -SL http://nginx.org/download/nginx-1.8.1.tar.gz | tar -xz 
 
 RUN cd nginx-1.8.1 \
-	./configure  --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre=../pcre-8.37 --with-zlib=../zlib-1.2.8 --with-openssl=../openssl-1.0.2e  --add-module=../echo-nginx-module --add-module=../ngx_devel_kit --add-module=../redis2-nginx-module --add-module=../srcache-nginx-module --add-module=../lua-nginx-module --add-module=../ngx_http_redis-0.3.8 --add-module=../set-misc-nginx-module
-RUN cd nginx-1.8.1 && make && make install
+	./configure  --prefix=/usr/local/nginx \
+	--with-http_stub_status_module \
+	--with-http_ssl_module \
+	--with-pcre=../pcre-8.37 \
+	--with-zlib=../zlib-1.2.8 \
+	--with-openssl=../openssl-1.0.2e \
+	--add-module=../echo-nginx-module \
+	--add-module=../ngx_devel_kit \
+	--add-module=../redis2-nginx-module \
+	--add-module=../srcache-nginx-module \
+	--add-module=../lua-nginx-module \
+	--add-module=../ngx_http_redis-0.3.8 \
+	--add-module=../set-misc-nginx-module \
+	make && make install
 
 WORKDIR /usr/local/nginx/logs
 
