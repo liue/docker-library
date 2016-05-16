@@ -19,11 +19,6 @@ RUN apt-get update && apt-get install -y \
     libapparmor-dev \
     libcap-dev \
     libsqlite3-dev \
-    lxc=1.0* \
-    mercurial \
-    parallel \
-    reprepro \
-    s3cmd=1.1.0*
 	
 	
 
