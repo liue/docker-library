@@ -1,32 +1,29 @@
 FROM ubuntu:14.04.4
 MAINTAINER liulei "liulei@ct108.com" 
 
+WORKDIR /tmp
 
 RUN cd /tmp 
 
-# update source  
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe"> /etc/apt/sources.list  
 
-RUN apt-get update && apt-get install -y \
-    aufs-tools \
-    automake \
-    btrfs-tools \
-    build-essential \
-    curl \
-    dpkg-sig \
-    git \
-    iptables \
-    libapparmor-dev \
-    libcap-dev \
-    libsqlite3-dev \
-	
-	
+RUN apt-get -qq update
+RUN apt-get -qqy install apt-utils
+RUN apt-get -qqy install git
+RUN apt-get -qqy install curl
+RUN apt-get -qqy install wget
+RUN apt-get -qqy install unzip
+RUN apt-get -qqy install git-core
+RUN apt-get -qqy install build-essential
+RUN apt-get -qqy install gcc
+RUN apt-get -qqy install g++
+RUN apt-get -qqy install cmake
+RUN apt-get -qqy install gdb
+RUN apt-get -qqy install libreadline-dev
+RUN apt-get -qqy install python
+RUN apt-get -qqy install groff
 
-RUN mkdir -p luajit \
-    && curl -SL http://luajit.org/download/LuaJIT-2.0.4.tar.gz \
-    | tar -xJC luajit \
-    && make -C luajit all \
-	&& make install
+RUN curl -SL http://luajit.org/download/LuaJIT-2.0.4.tar.gz | tar -xz
+RUN  cd LuaJIT-2.0.4 && make && make install
 
 
 RUN curl -SL https://www.openssl.org/source/old/1.0.2/openssl-1.0.2g.tar.gz | tar -xz 
@@ -42,10 +39,8 @@ RUN git clone https://github.com/openresty/set-misc-nginx-module.git
 
 RUN curl -SL http://nginx.org/download/nginx-1.8.1.tar.gz | tar -xz 
 
-RUN cd nginx-1.8.1
-
-RUN ./configure  --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre=../pcre-8.37 --with-zlib=../zlib-1.2.8 --with-openssl=../openssl-1.0.2e  --add-module=../echo-nginx-module --add-module=../ngx_devel_kit --add-module=../redis2-nginx-module --add-module=../srcache-nginx-module --add-module=../lua-nginx-module --add-module=../ngx_http_redis --add-module=../set-misc-nginx-module
-RUN make && make install
+RUN cd nginx-1.8.1 && ./configure  --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre=../pcre-8.37 --with-zlib=../zlib-1.2.8 --with-openssl=../openssl-1.0.2e  --add-module=../echo-nginx-module --add-module=../ngx_devel_kit --add-module=../redis2-nginx-module --add-module=../srcache-nginx-module --add-module=../lua-nginx-module --add-module=../ngx_http_redis-0.3.8 --add-module=../set-misc-nginx-module
+RUN cd nginx-1.8.1 && make && make install
 
 EXPOSE 80
 CMD ["/usr/local/nginx/sbin/nginx"]
