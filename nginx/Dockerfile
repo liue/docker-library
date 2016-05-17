@@ -61,7 +61,8 @@ ADD vhost /usr/local/nginx/conf/vhost
 ADD lua /usr/local/nginx/conf/lua
 ADD tencentCA /usr/local/nginx/conf/tencentCA
 ADD vlocation /usr/local/nginx/conf/vlocation
-ADD run.sh /root/run.sh
+RUN mkdir /usr/local/nginx/temp/temp_dir
+RUN mkdir /usr/local/nginx/temp/cache
 RUN chmod 755 /root/run.sh
 
 WORKDIR /usr/local/nginx/logs
