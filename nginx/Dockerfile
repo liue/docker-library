@@ -1,6 +1,8 @@
 FROM ubuntu:14.04.4
 MAINTAINER liulei "liulei@ct108.com" 
 
+WORKDIR /usr/local/src/
+
 RUN apt-get -qq update
 RUN apt-get -qqy install apt-utils
 RUN apt-get -qqy install git
@@ -54,7 +56,16 @@ RUN cd nginx-1.8.1 && \
 	--add-module=../set-misc-nginx-module  && \
 	make && make install
 
+COPY nginx.conf /usr/local/nginx/conf/nginx.conf
+ADD vhosts /usr/local/nginx/conf/vhosts
+ADD lua /usr/local/nginx/conf/lua
+ADD tencentCA /usr/local/nginx/conf/tencentCA
+ADD vlocation /usr/local/nginx/conf/vlocation
+ADD run.sh /root/run.sh
+RUN chmod 755 /root/run.sh
+
 WORKDIR /usr/local/nginx/logs
 
-EXPOSE 443
-CMD ["/usr/local/nginx/sbin/nginx"]
+EXPOSE 80 443
+
+CMD ["/root/run.sh"]
