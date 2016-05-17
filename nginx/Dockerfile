@@ -44,22 +44,22 @@ RUN tar -zxvf module/zlib-1.2.8.tar.gz
 RUN tar -zxvf ngx_http_redis-0.3.8.tar.gz
 
 #RUN git clone https://github.com/openresty/echo-nginx-module.git
-RUN tar -zxvf echo-nginx-module.tar.gz
+RUN tar -zxvf echo-nginx-module-master.tar.gz
 
 #RUN git clone https://github.com/simpl/ngx_devel_kit.git
-RUN tar -zxvf ngx_devel_kit.tar.gz
+RUN tar -zxvf ngx_devel_kit-master.tar.gz
 
 #RUN git clone https://github.com/openresty/redis2-nginx-module.git
-RUN tar -zxvf redis2-nginx-module.tar.gz
+RUN tar -zxvf redis2-nginx-module-master.tar.gz
 
 #RUN git clone https://github.com/openresty/srcache-nginx-module.git
-RUN tar -zxvf srcache-nginx-module.tar.gz
+RUN tar -zxvf srcache-nginx-module-master.tar.gz
 
 #RUN git clone https://github.com/openresty/lua-nginx-module.git
-RUN tar -zxvf lua-nginx-module.tar.gz
+RUN tar -zxvf lua-nginx-module-master.tar.gz
 
 #RUN git clone https://github.com/openresty/set-misc-nginx-module.git
-RUN tar -zxvf set-misc-nginx-module.tar.gz
+RUN tar -zxvf set-misc-nginx-module-master.tar.gz
 
 #RUN curl -SL http://nginx.org/download/nginx-1.8.1.tar.gz | tar -xz 
 RUN tar -zxvf nginx-1.8.1.tar.gz
