@@ -36,33 +36,43 @@ COPY module/openssl-1.0.2g.tar.gz module/openssl-1.0.2g.tar.gz
 RUN tar -xvf module/openssl-1.0.2g.tar.gz
 
 #RUN curl -SL http://exim.mirror.fr/pcre/pcre-8.37.tar.gz | tar -xz 
+COPY module/pcre-8.37.tar.gz module/pcre-8.37.tar.gz
 RUN tar -xvf module/pcre-8.37.tar.gz
 
 #RUN curl -SL http://zlib.net/zlib-1.2.8.tar.gz | tar -xz 
+COPY module/zlib-1.2.8.tar.gz module/zlib-1.2.8.tar.gz
 RUN tar -xvf module/zlib-1.2.8.tar.gz
 
 #RUN curl -SL http://people.freebsd.org/~osa/ngx_http_redis-0.3.8.tar.gz | tar -xz 
+COPY module/ngx_http_redis-0.3.8.tar.gz module/ngx_http_redis-0.3.8.tar.gz
 RUN tar -xvf module/ngx_http_redis-0.3.8.tar.gz
 
 #RUN git clone https://github.com/openresty/echo-nginx-module.git
+COPY module/echo-nginx-module-master.tar.gz module/echo-nginx-module-master.tar.gz
 RUN tar -xvf module/echo-nginx-module-master.tar.gz
 
 #RUN git clone https://github.com/simpl/ngx_devel_kit.git
+COPY module/ngx_devel_kit-master.tar.gz module/ngx_devel_kit-master.tar.gz
 RUN tar -xvf module/ngx_devel_kit-master.tar.gz
 
 #RUN git clone https://github.com/openresty/redis2-nginx-module.git
+COPY module/redis2-nginx-module-master.tar.gz module/redis2-nginx-module-master.tar.gz
 RUN tar -xvf module/redis2-nginx-module-master.tar.gz
 
 #RUN git clone https://github.com/openresty/srcache-nginx-module.git
+COPY module/srcache-nginx-module-master.tar.gz module/srcache-nginx-module-master.tar.gz
 RUN tar -xvf module/srcache-nginx-module-master.tar.gz
 
 #RUN git clone https://github.com/openresty/lua-nginx-module.git
+COPY module/lua-nginx-module-master.tar.gz module/lua-nginx-module-master.tar.gz
 RUN tar -xvf module/lua-nginx-module-master.tar.gz
 
 #RUN git clone https://github.com/openresty/set-misc-nginx-module.git
+COPY module/set-misc-nginx-module-master.tar.gz module/set-misc-nginx-module-master.tar.gz
 RUN tar -xvf module/set-misc-nginx-module-master.tar.gz
 
 #RUN curl -SL http://nginx.org/download/nginx-1.8.1.tar.gz | tar -xz 
+COPY module/nginx-1.8.1.tar.gz module/nginx-1.8.1.tar.gz
 RUN tar -xvf module/nginx-1.8.1.tar.gz
 
 
