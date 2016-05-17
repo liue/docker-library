@@ -68,4 +68,4 @@ WORKDIR /usr/local/nginx/logs
 
 EXPOSE 80 443
 
-CMD ["/root/run.sh"]
+CMD ["nginx", "-g", "daemon off;"]
