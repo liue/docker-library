@@ -57,9 +57,13 @@ RUN cd nginx-1.8.1 && \
 	make && make install
 
 COPY nginx.conf /usr/local/nginx/conf/nginx.conf
+RUN mkdir /usr/local/nginx/conf/vhosts
 ADD vhosts /usr/local/nginx/conf/vhosts
+RUN mkdir /usr/local/nginx/conf/lua
 ADD lua /usr/local/nginx/conf/lua
+RUN mkdir /usr/local/nginx/conf/tencentCA
 ADD tencentCA /usr/local/nginx/conf/tencentCA
+RUN mkdir /usr/local/nginx/conf/vlocation
 ADD vlocation /usr/local/nginx/conf/vlocation
 ADD run.sh /root/run.sh
 RUN chmod 755 /root/run.sh
