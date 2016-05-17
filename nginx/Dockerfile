@@ -22,7 +22,7 @@ RUN apt-get -qqy install libssl-dev
 
 
 #RUN curl -SL http://luajit.org/download/LuaJIT-2.0.4.tar.gz | tar -xz
-RUN tar -xvf LuaJIT-2.0.4.tar.gz 
+RUN tar -xvf module/LuaJIT-2.0.4.tar.gz 
 
 RUN  cd LuaJIT-2.0.4 && make && make install
 
