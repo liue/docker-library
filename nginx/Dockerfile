@@ -72,7 +72,7 @@ COPY module/set-misc-nginx-module-master.tar.gz module/set-misc-nginx-module-mas
 RUN tar -xvf module/set-misc-nginx-module-master.tar.gz
 
 #RUN curl -SL http://nginx.org/download/nginx-1.8.1.tar.gz | tar -xz 
-COPY module/set-misc-nginx-module-master.tar.gz module/set-misc-nginx-module-master.tar.gz
+COPY module/nginx-1.8.1.tar.gz module/nginx-1.8.1.tar.gz
 RUN tar -xvf module/nginx-1.8.1.tar.gz
 
 
