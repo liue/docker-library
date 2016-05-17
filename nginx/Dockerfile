@@ -20,7 +20,6 @@ RUN apt-get -qqy install groff
 RUN apt-get -qqy install openssl
 RUN apt-get -qqy install libssl-dev
 
-tar 
 
 #RUN curl -SL http://luajit.org/download/LuaJIT-2.0.4.tar.gz | tar -xz
 RUN tar -xzvf module/LuaJIT-2.0.4.tar.gz 
@@ -64,7 +63,6 @@ RUN tar -zxvf set-misc-nginx-module-master.tar.gz
 #RUN curl -SL http://nginx.org/download/nginx-1.8.1.tar.gz | tar -xz 
 RUN tar -zxvf nginx-1.8.1.tar.gz
 
-RUN
 
 RUN cd nginx-1.8.1 && \
 	./configure  --prefix=/usr/local/nginx \
