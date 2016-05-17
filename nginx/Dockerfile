@@ -65,6 +65,8 @@ RUN mkdir -p /usr/local/nginx/temp/temp_dir
 RUN mkdir -p /usr/local/nginx/temp/cache
 RUN chmod 755 /usr/local/nginx/temp/
 
+VOLUME ["/usr/local/nginx/logs/im","/usr/local/nginx/logs/allshuo","/usr/local/nginx/logs/cache","/usr/local/nginx/logs/all","/usr/local/nginx/logs/m"]
+
 WORKDIR /usr/local/nginx/logs
 
 EXPOSE 80 443
