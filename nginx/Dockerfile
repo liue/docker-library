@@ -63,7 +63,7 @@ ADD tencentCA /usr/local/nginx/conf/tencentCA
 ADD vlocation /usr/local/nginx/conf/vlocation
 RUN mkdir -p /usr/local/nginx/temp/temp_dir
 RUN mkdir -p /usr/local/nginx/temp/cache
-RUN chmod 755 /root/run.sh
+RUN chmod 755 /usr/local/nginx/temp/
 
 WORKDIR /usr/local/nginx/logs
 
