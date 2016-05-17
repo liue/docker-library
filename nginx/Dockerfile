@@ -48,28 +48,28 @@ COPY module/ngx_http_redis-0.3.8.tar.gz module/ngx_http_redis-0.3.8.tar.gz
 RUN tar -xvf module/ngx_http_redis-0.3.8.tar.gz
 
 #RUN git clone https://github.com/openresty/echo-nginx-module.git
-COPY module/echo-nginx-module-master.tar.gz module/echo-nginx-module-master.tar.gz
-RUN tar -xvf module/echo-nginx-module-master.tar.gz
+COPY module/echo-nginx-module.tar.gz module/echo-nginx-module.tar.gz
+RUN tar -xvf module/echo-nginx-module.tar.gz
 
 #RUN git clone https://github.com/simpl/ngx_devel_kit.git
-COPY module/ngx_devel_kit-master.tar.gz module/ngx_devel_kit-master.tar.gz
-RUN tar -xvf module/ngx_devel_kit-master.tar.gz
+COPY module/ngx_devel_kit.tar.gz module/ngx_devel_kit.tar.gz
+RUN tar -xvf module/ngx_devel_kit.tar.gz
 
 #RUN git clone https://github.com/openresty/redis2-nginx-module.git
-COPY module/redis2-nginx-module-master.tar.gz module/redis2-nginx-module-master.tar.gz
-RUN tar -xvf module/redis2-nginx-module-master.tar.gz
+COPY module/redis2-nginx-module.tar.gz module/redis2-nginx-module.tar.gz
+RUN tar -xvf module/redis2-nginx-module.tar.gz
 
 #RUN git clone https://github.com/openresty/srcache-nginx-module.git
-COPY module/srcache-nginx-module-master.tar.gz module/srcache-nginx-module-master.tar.gz
-RUN tar -xvf module/srcache-nginx-module-master.tar.gz
+COPY module/srcache-nginx-module.tar.gz module/srcache-nginx-module.tar.gz
+RUN tar -xvf module/srcache-nginx-module.tar.gz
 
 #RUN git clone https://github.com/openresty/lua-nginx-module.git
-COPY module/lua-nginx-module-master.tar.gz module/lua-nginx-module-master.tar.gz
-RUN tar -xvf module/lua-nginx-module-master.tar.gz
+COPY module/lua-nginx-module.tar.gz module/lua-nginx-module.tar.gz
+RUN tar -xvf module/lua-nginx-module.tar.gz
 
 #RUN git clone https://github.com/openresty/set-misc-nginx-module.git
-COPY module/set-misc-nginx-module-master.tar.gz module/set-misc-nginx-module-master.tar.gz
-RUN tar -xvf module/set-misc-nginx-module-master.tar.gz
+COPY module/set-misc-nginx-module.tar.gz module/set-misc-nginx-module.tar.gz
+RUN tar -xvf module/set-misc-nginx-module.tar.gz
 
 #RUN curl -SL http://nginx.org/download/nginx-1.8.1.tar.gz | tar -xz 
 COPY module/nginx-1.8.1.tar.gz module/nginx-1.8.1.tar.gz
