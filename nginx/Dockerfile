@@ -22,7 +22,6 @@ RUN apt-get -qqy install libssl-dev
 
 
 #RUN curl -SL http://luajit.org/download/LuaJIT-2.0.4.tar.gz | tar -xz
-COPY module/LuaJIT-2.0.4.tar.gz LuaJIT-2.0.4.tar.gz
 RUN tar -xvf LuaJIT-2.0.4.tar.gz 
 
 RUN  cd LuaJIT-2.0.4 && make && make install
@@ -32,37 +31,37 @@ RUN /sbin/ldconfig
 
 
 #RUN curl -SL https://www.openssl.org/source/old/1.0.2/openssl-1.0.2g.tar.gz | tar -xz 
-RUN tar -xz openssl-1.0.2g.tar.gz
+RUN tar -xvf module/openssl-1.0.2g.tar.gz
 
 #RUN curl -SL http://exim.mirror.fr/pcre/pcre-8.37.tar.gz | tar -xz 
-RUN tar -xz pcre-8.37.tar.gz
+RUN tar -xvf module/pcre-8.37.tar.gz
 
 #RUN curl -SL http://zlib.net/zlib-1.2.8.tar.gz | tar -xz 
-RUN tar -xz zlib-1.2.8.tar.gz
+RUN tar -xvf module/zlib-1.2.8.tar.gz
 
 #RUN curl -SL http://people.freebsd.org/~osa/ngx_http_redis-0.3.8.tar.gz | tar -xz 
-RUN tar -xz ngx_http_redis-0.3.8.tar.gz
+RUN tar -xvf module/ngx_http_redis-0.3.8.tar.gz
 
 #RUN git clone https://github.com/openresty/echo-nginx-module.git
-RUN tar -xz echo-nginx-module-master.tar.gz
+RUN tar -xvf module/echo-nginx-module-master.tar.gz
 
 #RUN git clone https://github.com/simpl/ngx_devel_kit.git
-RUN tar -xz ngx_devel_kit-master.tar.gz
+RUN tar -xvf module/ngx_devel_kit-master.tar.gz
 
 #RUN git clone https://github.com/openresty/redis2-nginx-module.git
-RUN tar -xz redis2-nginx-module-master.tar.gz
+RUN tar -xvf module/redis2-nginx-module-master.tar.gz
 
 #RUN git clone https://github.com/openresty/srcache-nginx-module.git
-RUN tar -xz srcache-nginx-module-master.tar.gz
+RUN tar -xvf module/srcache-nginx-module-master.tar.gz
 
 #RUN git clone https://github.com/openresty/lua-nginx-module.git
-RUN tar -xz lua-nginx-module-master.tar.gz
+RUN tar -xvf module/lua-nginx-module-master.tar.gz
 
 #RUN git clone https://github.com/openresty/set-misc-nginx-module.git
-RUN tar -xz set-misc-nginx-module-master.tar.gz
+RUN tar -xvf module/set-misc-nginx-module-master.tar.gz
 
 #RUN curl -SL http://nginx.org/download/nginx-1.8.1.tar.gz | tar -xz 
-RUN tar -xz nginx-1.8.1.tar.gz
+RUN tar -xvf module/nginx-1.8.1.tar.gz
 
 
 RUN cd nginx-1.8.1 && \
