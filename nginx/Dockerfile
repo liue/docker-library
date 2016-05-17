@@ -72,4 +72,4 @@ EXPOSE 80 443
 VOLUME ["/usr/local/nginx/logs/im","/usr/local/nginx/logs/allshuo","/usr/local/nginx/logs/cache","/usr/local/nginx/logs/all","/usr/local/nginx/logs/m"]
 
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["/usr/local/nginx/sbin/nginx", "-g", "daemon off;"]
