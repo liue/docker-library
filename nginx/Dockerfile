@@ -31,6 +31,7 @@ RUN /sbin/ldconfig
 
 
 #RUN curl -SL https://www.openssl.org/source/old/1.0.2/openssl-1.0.2g.tar.gz | tar -xz 
+COPY module/openssl-1.0.2g.tar.gz module/openssl-1.0.2g.tar.gz
 RUN tar -xvf module/openssl-1.0.2g.tar.gz
 
 #RUN curl -SL http://exim.mirror.fr/pcre/pcre-8.37.tar.gz | tar -xz 
