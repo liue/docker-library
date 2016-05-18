@@ -105,7 +105,7 @@ WORKDIR /usr/local/nginx/logs
 
 EXPOSE 821 1204 920 443
 
-VOLUME ["/usr/local/nginx/logs/im","/usr/local/nginx/logs/allshuo","/usr/local/nginx/logs/cache","/usr/local/nginx/logs/all","/usr/local/nginx/logs/m"]
+VOLUME ["/usr/local/nginx/logs/im","/usr/local/nginx/logs/allshuo","/usr/local/nginx/logs/cache","/usr/local/nginx/logs/test","/usr/local/nginx/logs/all","/usr/local/nginx/logs/m"]
 
 
 CMD ["/usr/local/nginx/sbin/nginx", "-g", "daemon off;"]
