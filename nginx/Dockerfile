@@ -5,17 +5,17 @@ WORKDIR /usr/local/src/
 
 RUN apt-get -qq update
 RUN apt-get -qqy install apt-utils
-RUN apt-get -qqy install git
-RUN apt-get -qqy install curl
-RUN apt-get -qqy install wget
+#RUN apt-get -qqy install git
+#RUN apt-get -qqy install curl
+#RUN apt-get -qqy install wget
 RUN apt-get -qqy install unzip
-RUN apt-get -qqy install git-core
+#RUN apt-get -qqy install git-core
 RUN apt-get -qqy install build-essential
 RUN apt-get -qqy install gcc
 RUN apt-get -qqy install g++
 RUN apt-get -qqy install cmake
-RUN apt-get -qqy install gdb
-RUN apt-get -qqy install libreadline-dev
+#RUN apt-get -qqy install gdb
+#RUN apt-get -qqy install libreadline-dev
 RUN apt-get -qqy install groff
 RUN apt-get -qqy install openssl
 RUN apt-get -qqy install libssl-dev
@@ -103,7 +103,7 @@ RUN chmod 755 /usr/local/nginx/temp/
 
 WORKDIR /usr/local/nginx/logs
 
-EXPOSE 80 443
+EXPOSE 821 1204 920 443
 
 VOLUME ["/usr/local/nginx/logs/im","/usr/local/nginx/logs/allshuo","/usr/local/nginx/logs/cache","/usr/local/nginx/logs/all","/usr/local/nginx/logs/m"]
 
